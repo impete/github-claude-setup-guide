@@ -1,0 +1,142 @@
+{
+  "title": "GitHub + Claude Code Setup Course",
+  "modules": [
+    {
+      "id": "m1",
+      "title": "Module 1: Mac Developer Foundations",
+      "path": ["beginner", "intermediate", "advanced"],
+      "overview": "Install essential tooling and understand course flow.",
+      "content": [
+        "Install Xcode Command Line Tools.",
+        "Install Homebrew.",
+        "Verify terminal environment."
+      ],
+      "commands": [
+        "xcode-select --install",
+        "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"",
+        "brew --version"
+      ],
+      "checkpoints": [
+        "Xcode tools installed",
+        "Homebrew installed",
+        "Terminal commands working"
+      ]
+    },
+    {
+      "id": "m2",
+      "title": "Module 2: Git Setup",
+      "path": ["beginner", "intermediate"],
+      "overview": "Install and configure Git for daily development.",
+      "content": [
+        "Install Git with Homebrew.",
+        "Set global user.name and user.email.",
+        "Set default branch naming convention."
+      ],
+      "commands": [
+        "brew install git",
+        "git --version",
+        "git config --global user.name \"Your Name\"",
+        "git config --global user.email \"you@example.com\"",
+        "git config --global init.defaultBranch main"
+      ],
+      "checkpoints": [
+        "Git installed",
+        "Identity configured",
+        "Global config verified"
+      ]
+    },
+    {
+      "id": "m3",
+      "title": "Module 3: GitHub Auth + SSH",
+      "path": ["beginner", "intermediate", "advanced"],
+      "overview": "Create secure GitHub authentication with SSH keys.",
+      "content": [
+        "Generate SSH keypair.",
+        "Add key to ssh-agent.",
+        "Add public key to GitHub settings.",
+        "Test connectivity."
+      ],
+      "commands": [
+        "ssh-keygen -t ed25519 -C \"you@example.com\"",
+        "eval \"$(ssh-agent -s)\"",
+        "ssh-add ~/.ssh/id_ed25519",
+        "cat ~/.ssh/id_ed25519.pub",
+        "ssh -T git@github.com"
+      ],
+      "checkpoints": [
+        "SSH key created",
+        "Public key added to GitHub",
+        "SSH auth test successful"
+      ]
+    },
+    {
+      "id": "m4",
+      "title": "Module 4: GitHub CLI + Repo Workflow",
+      "path": ["intermediate", "advanced"],
+      "overview": "Use GitHub CLI and Git branching workflow.",
+      "content": [
+        "Install GitHub CLI.",
+        "Authenticate via browser.",
+        "Clone repo and push branch workflow."
+      ],
+      "commands": [
+        "brew install gh",
+        "gh auth login",
+        "git clone git@github.com:OWNER/REPO.git",
+        "git checkout -b feature/my-change",
+        "git add . && git commit -m \"My change\" && git push -u origin feature/my-change"
+      ],
+      "checkpoints": [
+        "gh installed and authenticated",
+        "Repository cloned",
+        "Branch pushed successfully"
+      ]
+    },
+    {
+      "id": "m5",
+      "title": "Module 5: Install + Use Claude Code",
+      "path": ["beginner", "intermediate", "advanced"],
+      "overview": "Install Claude Code and use it inside real project flow.",
+      "content": [
+        "Install Node.js.",
+        "Install Claude Code CLI.",
+        "Authenticate and run first prompts."
+      ],
+      "commands": [
+        "brew install node",
+        "npm install -g @anthropic-ai/claude-code",
+        "claude --version",
+        "claude"
+      ],
+      "checkpoints": [
+        "Node installed",
+        "Claude CLI installed",
+        "Claude authenticated"
+      ]
+    },
+    {
+      "id": "m6",
+      "title": "Module 6: Practice + Checkpoints",
+      "path": ["beginner", "intermediate", "advanced"],
+      "overview": "Hands-on exercises to cement daily workflow.",
+      "content": [
+        "Create your first repository.",
+        "Make a commit and push.",
+        "Use Claude to explain/refactor code.",
+        "Open a pull request."
+      ],
+      "commands": [
+        "git init",
+        "git add .",
+        "git commit -m \"Initial commit\"",
+        "git push -u origin main",
+        "gh pr create --fill"
+      ],
+      "checkpoints": [
+        "Repo created and pushed",
+        "Claude assisted a coding task",
+        "Pull request opened"
+      ]
+    }
+  ]
+}
