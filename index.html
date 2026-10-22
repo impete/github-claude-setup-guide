@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub + Claude Code Setup Course</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>GitHub + Claude Code Setup Course</h1>
+    <div class="topbar-actions">
+      <input id="searchInput" type="search" placeholder="Search lessons, commands..." />
+      <button id="themeToggle">🌙</button>
+      <button id="resetProgressBtn">Reset Progress</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="card">
+        <h2>Progress</h2>
+        <div class="progress-wrap">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <p id="progressText">0% complete</p>
+        <button id="resumeBtn">Resume</button>
+      </section>
+
+      <section class="card">
+        <h2>Learning Paths</h2>
+        <button class="path-btn" data-path="beginner">👶 Beginner</button>
+        <button class="path-btn" data-path="intermediate">📚 Intermediate</button>
+        <button class="path-btn" data-path="advanced">⚡ Advanced</button>
+      </section>
+
+      <section class="card">
+        <h2>Modules</h2>
+        <nav id="moduleNav"></nav>
+      </section>
+    </aside>
+
+    <section class="content">
+      <article id="contentArea" class="card"></article>
+      <section id="checkpointArea" class="card"></section>
+    </section>
+  </main>
+
+  <template id="commandTemplate">
+    <div class="cmd-block">
+      <pre><code></code></pre>
+      <button class="copy-btn">Copy</button>
+    </div>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>
