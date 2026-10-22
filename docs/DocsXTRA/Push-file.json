@@ -1,0 +1,15 @@
+{
+  "tool": "push_files",
+  "arguments": {
+    "owner": "impete",
+    "repo": "github-claude-setup-guide",
+    "branch": "main",
+    "message": "Add standalone browser-based GitHub + Claude Code Setup Course app under docs/",
+    "files": [
+      { "path": "docs/index.html", "content": "..." },
+      { "path": "docs/styles.css", "content": "..." },
+      { "path": "docs/app.js", "content": "..." },
+      { "path": "docs/data/course.json", "content": "..." }
+    ]
+  }
+}

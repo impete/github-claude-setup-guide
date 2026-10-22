@@ -1,0 +1,115 @@
+2) Complete step-by-step instructions (apply + verify)
+
+Step 1 — Apply the payload in one commit
+
+Run push_files once with the JSON above.
+
+If you’re using a script/SDK, pass that JSON directly as the tool input.
+
+Step 2 — Confirm files exist
+
+Verify these were created on main:
+
+docs/index.html
+docs/styles.css
+docs/app.js
+docs/data/course.json
+Step 3 — Enable GitHub Pages
+
+In GitHub UI:
+
+Open repo: impete/github-claude-setup-guide
+Go to Settings → Pages
+Under Build and deployment:
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+Save.
+Step 4 — Open the live app URL
+
+After Pages builds (usually 1–3 min), open:
+
+https://impete.github.io/github-claude-setup-guide/
+
+Step 5 — Smoke test the app
+
+Check all major features:
+
+Module list renders in sidebar
+Path filter works (Beginner / Intermediate / Advanced)
+Search works across module text
+Open a module and see commands/checkpoints
+Copy button works on command blocks
+Check checkpoints and see progress bar update
+Refresh page and confirm progress persists
+Click Resume and confirm it opens last viewed module
+Toggle dark/light mode and refresh (theme persists)
+Click Reset Progress and confirm reset behavior
+Step 6 — Optional: link from root README
+
+Add a prominent link near top of README.md:
+
+md
+## 🌐 Interactive Course App
+Open the standalone browser app here:
+https://impete.github.io/github-claude-setup-guide/
+Step 7 — Optional hardening
+
+If you want production polish next, I can provide a second one-shot payload for:
+
+keyboard shortcuts (next/previous module),
+markdown rendering for rich module text,
+import/export progress JSON,
+accessibility improvements (ARIA/live regions),
+printable certificate/checklist export,
+offline support (simple service worker).
+If you want, I can now generate a second single-commit payload that also updates README.md to link directly to the live app.
+how do I Run push_files once with the JSON ?
+
+Use the tool/API call to push_files and pass that JSON as the arguments.
+
+Minimal example (conceptual)
+
+Call:
+
+tool: push_files
+arguments: the exact JSON payload I gave you
+So it looks like:
+
+JSON
+{
+  "tool": "push_files",
+  "arguments": {
+    "owner": "impete",
+    "repo": "github-claude-setup-guide",
+    "branch": "main",
+    "message": "Add standalone browser-based GitHub + Claude Code Setup Course app under docs/",
+    "files": [
+      { "path": "docs/index.html", "content": "..." },
+      { "path": "docs/styles.css", "content": "..." },
+      { "path": "docs/app.js", "content": "..." },
+      { "path": "docs/data/course.json", "content": "..." }
+    ]
+  }
+}
+If you’re doing it in this Copilot chat/tooling flow
+
+Paste the payload in one tool call to push_files.
+Ensure:
+owner is impete
+repo is github-claude-setup-guide
+branch is main
+all 4 files are in the files array
+Execute once.
+If you want a local CLI fallback (no tool call)
+
+You can do the same with git manually:
+
+bash
+cd github-claude-setup-guide
+mkdir -p docs/data
+# create files: docs/index.html docs/styles.css docs/app.js docs/data/course.json
+git add docs
+git commit -m "Add standalone browser-based GitHub + Claude Code Setup Course app under docs/"
+git push origin main
+If you want, I can now give you a copy/paste-ready single tool invocation block exactly formatted for your environment so you can run it without editing.

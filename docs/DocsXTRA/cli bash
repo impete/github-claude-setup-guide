@@ -1,0 +1,8 @@
+bash
+
+cd github-claude-setup-guide
+mkdir -p docs/data
+# create files: docs/index.html docs/styles.css docs/app.js docs/data/course.json
+git add docs
+git commit -m "Add standalone browser-based GitHub + Claude Code Setup Course app under docs/"
+git push origin main
